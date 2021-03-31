@@ -1,17 +1,23 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import GlobalStyle from '../../assets/styles/GlobalStyle';
-import { theme } from '../../assets/styles/theme';
+import GlobalStyle from '../../theme/GlobalStyle';
+import SEO from '../../components/atoms/SEO/SEO';
+import { mainTheme } from '../../theme/mainTheme';
+import { Wrapper, Card } from './MainTemplate.styles';
 
 interface Props {
+  title: string;
   children: React.ReactNode;
 }
 
-const MainTemplate: React.FC<Props> = ({ children }) => (
+const MainTemplate: React.FC<Props> = ({ title, children }) => (
   <>
+    <SEO title={title} />
     <GlobalStyle />
-    <ThemeProvider theme={theme}>
-      <>{children}</>
+    <ThemeProvider theme={mainTheme}>
+      <Wrapper>
+        <Card>{children}</Card>
+      </Wrapper>
     </ThemeProvider>
   </>
 );
