@@ -1,4 +1,6 @@
-frontend/node_modules
+tykimonline-front/node_modules
+tykimonline-api/node_modules
 .DS_Store
 .idea
 .husky
+.env-docker
